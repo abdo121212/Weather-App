@@ -45,11 +45,12 @@ export const Forecast = ({
           >
             {forecastHour.map((ele) => (
               <div
-              key={ele.time_epoch}
-              className="flex flex-col justify-center items-center pr-[105px] ">
+                key={ele.time_epoch}
+                className="flex flex-col justify-center items-center pr-[105px] "
+              >
                 <p className="font-light text-2xl">{ele.time.split(" ")[1]}</p>
                 <img src={ele.condition.icon} className="py-10" alt="" />
-                <p className="font-bold text-xl">{ele.temp_c}</p>
+                <p className="font-bold text-xl">{`${ele.temp_c} °`}</p>
               </div>
             ))}
             <div className="after absolute top-0 right-0  w-[100px] h-[230px] flex items-center justify-center">

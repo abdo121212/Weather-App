@@ -1,20 +1,16 @@
 import React from "react";
 import { format } from "date-fns";
 
-export const TimeAndLocation = ({ weather : { location}}) => {
+export const TimeAndLocation = ({ weather: { location } }) => {
   const currentTime = location.localtime;
   const currentTimeEpoch = location.localtime_epoch;
-
   function formatLocalTimeEpoch(epoch) {
     // Convert epoch seconds to milliseconds
     const date = new Date(epoch * 1000);
-
     // Format the date using date-fns
     return format(date, "EEEE");
   }
-
   const formattedDate = formatLocalTimeEpoch(currentTimeEpoch);
-
   return (
     <>
       <div className="flex flex-row justify-center items-center py-6 ">

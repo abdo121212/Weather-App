@@ -65,17 +65,13 @@ function App() {
       <div
         className={` max-md:px-0  px-40  bg-gradient-to-br  ${formatBackGround()} `}
       >
-        {weather !== null ? (
+        {weather && (
           <div>
             <TopButtons setQuery={setQuery} />
             <Search setQuery={setQuery} />
             <TimeAndLocation weather={weather} />
             <TemperatureAndDetalis weather={weather} />
             <Forecast weather={weather} title="hourly forecast " />
-          </div>
-        ) : (
-          <div className=" text-center mt-[400px] text-5xl capitalize text-red-500">
-            city Not Found
           </div>
         )}
       </div>
