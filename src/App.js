@@ -10,7 +10,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [query, setQuery] = useState("london");
-  const [error, setError] = useState(null);
 
   const [weather, setWeather] = useState(null);
 
@@ -24,11 +23,22 @@ function App() {
         .then((data) => {
           return data;
         });
+      console.log(data);
 
-      if (!data.error) {
-        setWeather(data);
+      if (data.error) {
+        toast.info(` ${query}  City Not found   `, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          style: { backgroundColor: "red", color: "white" },
+        });
       } else {
-        setWeather(null);
+        setWeather(data);
       }
     };
     getData();
@@ -71,7 +81,7 @@ function App() {
             <Search setQuery={setQuery} />
             <TimeAndLocation weather={weather} />
             <TemperatureAndDetalis weather={weather} />
-            <Forecast weather={weather} title="hourly forecast " />
+            <Forecast weather={weather} title="hourly forecast" />
           </div>
         )}
       </div>

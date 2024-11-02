@@ -34,7 +34,7 @@ export const TopButtons = ({ setQuery }) => {
         <div
           onClick={handleCity}
           key={city.id}
-          className="text-white font-bold text-lg select-none cursor-pointer transition	hover:text-cyan-200  "
+          className="text-white font-bold text-lg select-none cursor-pointer transition	hover:text-cyan-200 capitalize"
         >
           {city.title}
         </div>
