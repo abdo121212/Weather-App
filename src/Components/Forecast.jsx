@@ -8,9 +8,6 @@ export const Forecast = ({
     forecast: { forecastday },
   },
 }) => {
-
-
-  
   const forecastHour = forecastday[0].hour;
   const slider = document.getElementById("slider");
   const scrollR = () => {
@@ -48,10 +45,15 @@ export const Forecast = ({
             {forecastHour.map((ele) => (
               <div
                 key={ele.time_epoch}
-                className="flex flex-col justify-center items-center pr-[105px] "
+                className="flex flex-col justify-center items-center px-[60px] "
               >
                 <p className="font-light text-2xl">{ele.time.split(" ")[1]}</p>
-                <img src={ele.condition.icon} className="py-10" alt="" />
+                <img
+                  src={ele.condition.icon}
+                  width={200}
+                  className="py-10"
+                  alt="forecastTime"
+                />
                 <p className="font-bold text-xl">{`${ele.temp_c} °`}</p>
               </div>
             ))}

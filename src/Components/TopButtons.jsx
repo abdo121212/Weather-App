@@ -29,7 +29,7 @@ export const TopButtons = ({ setQuery }) => {
     setQuery(e.target.innerText);
   };
   return (
-    <div className="flex justify-between items-start py-4  max-md:hidden">
+    <div className="flex justify-between items-start py-4  max-sm:hidden">
       {cities.map((city) => (
         <div
           onClick={handleCity}

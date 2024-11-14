@@ -9,7 +9,6 @@ export const Search = ({ setQuery }) => {
     if (city !== "") setQuery(city);
   };
 
-
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
     }
@@ -38,14 +37,14 @@ export const Search = ({ setQuery }) => {
         <BiSearchAlt2
           size={30}
           onClick={handleSearch}
-          className="text-white cursor-pointer duration-200  max-md:hidden transiton ease-out hover:scale-125 max-sm:hidden"
+          className="text-white cursor-pointer duration-200   transiton ease-out hover:scale-125 "
         />
         <BiCurrentLocation
           onClick={() => {
             setQuery("fayoum");
           }}
           size={30}
-          className="text-white cursor-pointer transiton duration-200 max-md:hidden ease-out hover:scale-125  max-sm:hidden "
+          className="text-white cursor-pointer transiton duration-200  ease-out hover:scale-125   "
         />
       </div>
       <div className="flex flex-row  justify-start items-center px-10  max-md:hidden select-none ">

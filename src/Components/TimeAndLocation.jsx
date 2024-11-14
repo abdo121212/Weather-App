@@ -14,31 +14,33 @@ export const TimeAndLocation = ({ weather: { location } }) => {
   return (
     <>
       <div className="flex flex-row justify-center items-center py-6 ">
-        <p className="text-white text-2xl font-extralight max-md:text-sm ">
+        <p className="text-white text-2xl font-light max-md:text-2xl max-sm:text-lg ">
           {`${formattedDate} ,${currentTime.split(" ")[0].split("-")[2]} ${
             currentTime.split(" ")[0].split("-")[1]
           } 
           ${currentTime.split(" ")[0].split("-")[0]}  `}
         </p>
-        <p className="text-white text-2xl font-extralight max-md:text-sm px-2">
+        <p className="text-white text-2xl  px-2 font-light max-md:text-2xl max-sm:text-lg">
           {" "}
           |{" "}
         </p>
-        <p className="text-white text-2xl font-extralight max-md:text-sm pr-1">
+        <p className="text-white text-2xl  pr-1 font-light max-md:text-2xl max-sm:text-lg">
           {" "}
           local Time
         </p>
-        <p className="text-white text-2xl font-extralight max-md:text-sm ">
+        <p className="text-white text-2xl  font-light max-md:text-2xl max-sm:text-lg ">
           {" "}
           {currentTime.split(" ")[1]}{" "}
         </p>
       </div>
-      <div className="flex flex-row justify-center items-center ">
-        <p className="text-white font-medium text-3xl max-md:text-sm">
+      <div className="flex flex-row justify-center items-center  ">
+        <p className="text-white font-medium text-3xl max-md:text-2xl ">
           {location.country}
         </p>
-        <p className="text-white font-medium text-3xl max-md:text-sm px-2">,</p>
-        <p className="text-white font-medium text-3xl max-md:text-sm">
+        <p className="text-white font-medium text-3xl  px-2 max-md:text-2xl ">
+          ,
+        </p>
+        <p className="text-white font-medium text-3xl  max-md:text-2xl ">
           {location.name}
         </p>
       </div>
